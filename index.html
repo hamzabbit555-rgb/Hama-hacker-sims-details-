@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Checker | Hamza</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background-color: #0b111a; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
+        .container { width: 100%; max-width: 450px; }
+        .header-top { background-color: #f1c40f; color: #000; padding: 25px 10px; border-radius: 20px 20px 0 0; text-align: center; }
+        .header-top h2 { font-size: 22px; margin-bottom: 5px; }
+        .search-card { background-color: #1c2631; padding: 20px; border-radius: 0 0 20px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .tabs { display: flex; gap: 10px; margin-bottom: 15px; }
+        .tab-btn { flex: 1; padding: 12px; border-radius: 10px; border: none; font-weight: bold; background: #f1c40f; color: #000; }
+        .input-row { display: flex; gap: 5px; margin-bottom: 20px; }
+        input { flex: 3; padding: 15px; border-radius: 10px; border: 1px solid #34495e; background: #0b111a; color: #fff; outline: none; }
+        .btn-search { flex: 1; background: #f1c40f; color: #000; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        .result-panel { background: #121a24; border-radius: 10px; padding: 20px; border: 1px solid #2c3e50; }
+        .result-item { margin-bottom: 12px; border-bottom: 1px solid #2c3e50; padding-bottom: 5px; }
+        .label { font-size: 11px; color: #7f8c8d; text-transform: uppercase; }
+        .value { font-size: 14px; color: #ecf0f1; font-weight: bold; margin-top: 3px; }
+        .dev-footer { text-align: center; margin-top: 15px; color: #7f8c8d; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-top">
+            <h2>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</h2>
+            <p>Welcome! Fast & Secure Database Checker</p>
+        </div>
+        <div class="search-card">
+            <div class="tabs"><button class="tab-btn">Phone</button></div>
+            <div class="input-row">
+                <input type="text" id="userInput" placeholder="03*********">
+                <button class="btn-search" onclick="search()">Search</button>
+            </div>
+            <div class="result-panel">
+                <div class="result-item"><div class="label">Name</div><div id="resName" class="value">****</div></div>
+                <div class="result-item"><div class="label">Phone</div><div id="resPhone" class="value">N/A</div></div>
+                <div class="result-item" style="border:none;"><div class="label">Address</div><div id="resAddress" class="value">****</div></div>
+            </div>
+            <p class="dev-footer">Developed By: Hamza</p>
+        </div>
+    </div>
+    <script>
+        function search() {
+            let num = document.getElementById('userInput').value;
+            if(num) {
+                document.getElementById('resPhone').innerText = num;
+                document.getElementById('resName').innerText = "Loading Record...";
+                setTimeout(() => { alert("Database Connection Error. Contact Hamza."); }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
